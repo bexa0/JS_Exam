@@ -11,7 +11,7 @@ formEl.addEventListener('submit', async (e) => {
 
   if (response.ok) {
     const data = await response.json();
-    wrapper.appendChild(createProfileEl(data))
+    wrapper.appendChild(createProfileEl(data)) // appendChild () добавляет узел в качестве последнего дочернего узла в указанный родительский элемент
     mainEl.appendChild(wrapper);
     inputEl.value = '';
   } else {
@@ -21,11 +21,11 @@ formEl.addEventListener('submit', async (e) => {
 
 const inputEl = document.createElement('input');
 inputEl.classList.add('search-input');
-inputEl.setAttribute('name', 'name')
+inputEl.setAttribute('name', 'name') // setAttribute () объекта Element позволяет добавить новый атрибут
 
 const searchButtonEl = document.createElement('button')
 searchButtonEl.classList.add('search-button');
-searchButtonEl.setAttribute('type', 'submit');
+searchButtonEl.setAttribute('type', 'submit'); // setAttribute () объекта Element позволяет добавить новый атрибут
 searchButtonEl.innerHTML = "Поиск";
 
 formEl.appendChild(inputEl);
@@ -36,7 +36,7 @@ function createProfileEl(profileData) {
   const element = document.createElement('div');
   element.classList.add('profile');
   element.innerHTML = `
-    <img class="search-image" src=${profileData.avatar_url}></img>
+    <img class="search-image" src=${profileData.avatar_url}>
     <p class="search-text"><span>Имя: </span>${profileData.name}</p>
     <p class="search-text"><span>Город: </span>${profileData.location}</p>
     <p class="search-text"><span>О себе: </span>${profileData.bio}</p>
