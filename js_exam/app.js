@@ -1,5 +1,6 @@
 const mainEl = document.querySelector('.main');
 const wrapper = document.createElement('div')
+wrapper.classList.add('block')
 
 const formEl = document.createElement('form');
 formEl.addEventListener('submit', async (e) => {
